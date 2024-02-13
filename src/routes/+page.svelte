@@ -3,4 +3,4 @@
 <p>new text element</p>
 
 
-<h2>test update! hooray!<h2>
+<h2>test update! hooray!</h2>
