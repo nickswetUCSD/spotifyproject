@@ -1,6 +1,12 @@
 <script>
     import App from '../components/App.svelte';
 
+    let sliderYear = 'all years.';   
+    
+    export function giveSliderYear() {
+      return sliderYear;
+    };
+
 </script>
 
 <body>
@@ -8,7 +14,8 @@
   </h1>
     <p class = "caption">Adjust the slider to see Billboard Hits by year. Data Source: <l href="https://www.datacamp.com/workspace/datasets/dataset-python-spotify-music">  <u>DataCamp</u></l>  </p>
 
-    <input class='slider' type="range" min="2010" max="2019" step="1" >
+    <input class='slider' bind:value = {sliderYear} type="range" min="2010" max="2019" step="1" >
+    <p class = "caption" pos="r"> Showing Billboard Hits from {sliderYear} </p>
     <App />
 </body>
 <style>
@@ -81,5 +88,10 @@ l {
 }
 l:hover {
   color: #20d45c;
+}
+.caption[pos='r'] {
+  left: 820px;
+  top: 100px;
+  position: absolute;
 }
 </style>

@@ -3,6 +3,7 @@
     import { onMount } from 'svelte';
     import Graph from '../components/Graph.svelte';
 
+
     let data = [];
 
     onMount(async() => {

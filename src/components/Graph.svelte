@@ -1,5 +1,6 @@
 <script>
     import * as d3 from 'd3';
+    // import { giveSliderYear } from '../routes/+page.svelte';
     
     export let data;
 
@@ -12,6 +13,9 @@
 
     let gx;
     let gy;
+
+    // var sliderYear = giveSliderYear();
+
 
     $: x = d3
     .scaleLinear()
@@ -108,6 +112,8 @@
         </text>
     </g>
 
+    
+
     <!-- X-AXIS LABEL -->
     <g>
         <text
@@ -128,9 +134,11 @@
     <!-- Point marks -->
     <g stroke="#fafdf6" stroke-opacity="1">
         {#each data as d, i}
-            {#if d.year == d.year}
-          <circle key={i} cx={x(d.percentiledB)} cy={y(d.bpm)} fill={color(d.year)} opacity=1 r="5" />
-          {/if}
+            <!-- {#if sliderYear == 'all years.'} -->
+                {#if d.year == 2010}
+                    <circle key={i} cx={x(d.percentiledB)} cy={y(d.bpm)} fill={color(d.year)} opacity=1 r="5" />
+                {/if}
+            <!-- {/if} -->
         {/each}
       </g>
 
