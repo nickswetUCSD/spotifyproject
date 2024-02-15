@@ -13,7 +13,19 @@
         // Remove corrupted data outlier.
         data.splice(442, 1);
 
-        console.log(data[0].bpm)
+        //Generate dB percentile
+        for (let i = 0; i < data.length; i++) {
+            let percentile = 0;
+            for (let j = 0; j < data.length; j++) {
+                if (data[i].dB >= data[j].dB) {
+                    percentile = percentile + 1;
+                }
+            }
+            percentile = percentile*1.0 * 100 / data.length*1.0;
+            data[i].percentiledB = percentile;
+            
+        }
+        console.log(data)
     });
 
 </script>
