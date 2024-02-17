@@ -47,14 +47,11 @@
       <p class = "caption" pos="r"> Showing Billboard Hits from {sliderYear} </p>
       <Graph {data} bind:sliderYear={sliderYear}/>
 
-      <!-- <div class='description'>
-        <p style='color:#20d45c;'>
-          {sliderYear}
+      <div class='description'>
+        <p style='color:#FAFDF6'>
+          Each colored-in point in the dataset corresponds to a top 100 song of that year, according to the Billboard 100 chart. Grayed-out points are songs from different years. More information can be found <a href="https://docs.google.com/document/d/1Kk-nE2rbHrdHtF7sgXLapOEpjhX2HgvcEUEqrFhUWyo/edit?usp=sharing"><d style="color:#20d45c">here.</d></a>
         </p>
-        <p style="position:absolute; left: 60px; top: 0px; min-width: 200px;color:#FAFDF6;">
-          billboard hits:
-        </p>
-      </div> -->
+      </div>
   </body>
 
   <style>
@@ -66,6 +63,10 @@
     @font-face {
       font-family: "Spotify Circular Medium";
       src: url('../components/circular-spotify-text-font/CircularSpotifyText-Medium.otf') format('opentype'),
+    }
+    @font-face {
+      font-family: "Spotify Circular Light";
+      src: url('../components/circular-spotify-text-font/CircularSpotifyText-Light.otf') format('opentype'),
     }
     :root {
       --slider-color: #20d45c;
@@ -98,11 +99,12 @@
     }
     .description {
       background-color: #2d2a32;
-      left: 890px;
-      top: 250px;
+      left: 800px;
+      top: 180px;
       position: absolute;
       font-family: 'Spotify Circular Medium';
-      font-size: 150%;
+      font-size: 80%;
+      max-width: 400px;
       
     }
     body {
